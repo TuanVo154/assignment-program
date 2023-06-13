@@ -1,0 +1,72 @@
+﻿<Window x:Class="kiemtra2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kiemtra2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Mã Môn học" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="99"/>
+        <Label Content="Tên Môn học" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="99"/>
+        <TextBox x:Name="txtMaMonHoc" HorizontalAlignment="Left" Margin="97,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtTenMonHoc" HorizontalAlignment="Left" Margin="97,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Mã Giáo viên" HorizontalAlignment="Left" Margin="238,10,0,0" VerticalAlignment="Top" Width="99"/>
+        <Label Content="Tên Giáo viên" HorizontalAlignment="Left" Margin="238,41,0,0" VerticalAlignment="Top" Width="99"/>
+        <TextBox x:Name="txtMaGV" HorizontalAlignment="Left" Margin="342,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtTenGV" HorizontalAlignment="Left" Margin="342,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnThemMonHoc" Content="Thêm Môn Học" HorizontalAlignment="Left" Margin="108,72,0,0" VerticalAlignment="Top" Width="109" Click="btnThemMonHoc_Click"/>
+        <Button x:Name="btnThemGV" Content="Thêm Giáo Viên" HorizontalAlignment="Left" Margin="354,72,0,0" VerticalAlignment="Top" Width="108" Click="btnThemGV_Click"/>
+        <Label Content="DS Môn học" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="99"/>
+        <Label Content="DS Giáo viên" HorizontalAlignment="Left" Margin="238,93,0,0" VerticalAlignment="Top" Width="99"/>
+        <ListBox x:Name="lstMonHoc" d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="0,124,583,93" Width="NaN">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding MaMonHoc}" />
+                        <TextBlock Grid.Column="1" Text="{Binding TenMonHoc}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="lstGV" d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="245,124,338,93" Width="NaN" SelectionChanged="lstGV_SelectionChanged" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding MaGiaoVien}" />
+                        <TextBlock Grid.Column="1" Text="{Binding HoTen}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="lstPhanCong" d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="586,127,0,93" Width="NaN">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding TenGiaoVien}" />
+                        <TextBlock Grid.Column="1" Text="{Binding TenMonHoc}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="btnXoaMH" Content="Xóa Môn Học" HorizontalAlignment="Left" Margin="49,350,0,0" VerticalAlignment="Top" Width="108" Click="btnXoaMH_Click"/>
+        <Button x:Name="btnXoaGV" Content="Xóa Giáo Viên" HorizontalAlignment="Left" Margin="308,350,0,0" VerticalAlignment="Top" Width="92" Click="btnXoaGV_Click"/>
+        <Button x:Name="btnXoaPC" Content="Xóa Phân Công" HorizontalAlignment="Left" Margin="648,350,0,0" VerticalAlignment="Top" Width="106" Click="btnXoaPC_Click"/>
+        <Button x:Name="btnThemPCGD" Content="Thêm PCGD" HorizontalAlignment="Left" Margin="486,214,0,0" VerticalAlignment="Top" Width="78" Click="btnThemPCGD_Click"/>
+        <Button x:Name="btnThoat" Content="Thoát" HorizontalAlignment="Left" Margin="400,404,0,0" VerticalAlignment="Top" Width="62" Click="btnThoat_Click"/>
+        <Label Content="Bảng phân công giảng dạy" HorizontalAlignment="Left" Margin="586,93,0,0" VerticalAlignment="Top" Width="99"/>
+        <Label Content="Họ tên SV: Võ Hoàng Tuấn" Margin="586,23,40,375" Background="#FFFDFDFD" Foreground="#FFEA1313"/>
+    </Grid>
+</Window>
